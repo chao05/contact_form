@@ -127,7 +127,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CONTACT_EMAIL = 'Yechao@live.cn'
+CONTACT_EMAIL = 'yechao@live.cn'
 ADMIN_EMAILS = ['chao.ye@hafele.com.cn', ]
 
 
