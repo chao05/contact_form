@@ -133,7 +133,7 @@ ADMIN_EMAILS = ['chao.ye@hafele.com.cn', ]
 
 # Twilio SendGrid
 EMAIL_HOST = 'smtp.sendgrid.net'
-#EMAIL_PORT = 587
-#EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'yechao@live.cn'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
