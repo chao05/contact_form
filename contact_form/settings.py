@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import whitenoise
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -28,6 +29,10 @@ SECRET_KEY = 'django-insecure-j9kq#imr_hdss&3r#i=-p-g5+7*e)8-q2jy68&ujoas!fb8+ay
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ALLOWED_HOSTS = ['akc-notice.onrender.com']
 
@@ -46,6 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

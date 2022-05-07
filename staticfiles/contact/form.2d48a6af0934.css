@@ -1,0 +1,8 @@
+h3, form {
+    margin: auto;
+    max-width: fit-content;
+}
+input {
+    display: block;
+    margin-bottom: 2%;
+}
