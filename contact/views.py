@@ -10,7 +10,7 @@ def contact_view(request):
             form.save()
             notice_email=f'email is {form.cleaned_data["email"]}'
             notice_po_number=f'po_number is {form.cleaned_data["po_number"]}'
-            send_mail(notice_email,notice_po_number, settings.CONTACT_EMAIL, settings.ADMIN_EMAILS)
+            send_mail(notice_email,notice_po_number, settings.CONTACT_EMAIL, settings.ADMIN_EMAILS, fail_silently=False)
             return render(request, 'contact/success.html')
     form = ContactForm()
     context = {'form': form}
