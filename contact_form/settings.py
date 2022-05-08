@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import whitenoise
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -28,13 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j9kq#imr_hdss&3r#i=-p-g5+7*e)8-q2jy68&ujoas!fb8+ay'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #if not DEBUG:
     #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = ['akc-notice.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -51,7 +50,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -116,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -134,12 +132,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CONTACT_EMAIL = 'yechao@live.cn'
-ADMIN_EMAILS = ['chao.ye@hafele.com.cn', ]
+ADMIN_EMAILS = ['yechao25@gmail.com', ]
 
 
 # Twilio SendGrid
 EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_PORT = 587
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
