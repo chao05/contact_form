@@ -1,8 +1,19 @@
-h3, form {
-    margin: auto;
-    max-width: fit-content;
+fieldset {
+    width: fit-content;
 }
-input {
-    display: block;
-    margin-bottom: 2%;
+
+input[type='submit'] {
+    color: brown;
 }
+input, select {
+    float: right;
+}
+label {
+    font-size:medium;
+    font-weight: normal;
+}
+legend {
+    font-size: larger;
+    color: brown;
+}
+
