@@ -7,3 +7,7 @@ class ContactForm(ModelForm):
     class Meta:
         model = Contact
         fields = '__all__'
+        widgets = {
+            'email': forms.EmailInput(attrs={'placeholder': '@hafele.com.cn'}),
+            'po_number': forms.TextInput(attrs={'placeholder': '76543210'})
+        }

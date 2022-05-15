@@ -1,2 +1,15 @@
-<h1>Thank you for your inquiry</h1>
-<p>Your contact information and message was successfully submitted.</p>
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <fieldset>
+        <legend>您填入的信息为：</legend>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </form>
+        <p class="form_feedback">该信息已提交，产品部稍后会提供AKC之序列号</p>
+        <a href="{% url 'contact:akc_notice' %}">
+            <input type="submit" name="another_po" id="another_po" value="提交另一单">
+        </a>
+    </fieldset>
+{% endblock content %}

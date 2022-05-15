@@ -1,12 +1,14 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'contact/form.css' %}">
+{% extends 'base_generic.html' %}
 
-<fieldset>
-    <legend>AKC下单通知</legend>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="提交">
-    </form>
-</fieldset>
+{% block content %}
+    <fieldset>
+        <legend>AKC下单通知</legend>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="提交">
+        </form>
+        <p class="if_required">该表格前两项为必填，其余项为选填。</p>
+    </fieldset>
+{% endblock content %}
 

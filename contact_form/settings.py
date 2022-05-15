@@ -135,7 +135,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CONTACT_EMAIL = 'yechao@live.cn'
-ADMIN_EMAILS = ['yechao25@gmail.com', ]
+ADMIN_EMAILS = []
 
 
 # Twilio SendGrid
